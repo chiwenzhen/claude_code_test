@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}我的博客{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="/" class="site-logo">我的博客</a>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                {% for cat in categories %}
+                <a href="/category/{{ cat.name }}">{{ cat.name }}</a>
+                {% endfor %}
+                <a href="/about">关于</a>
+            </div>
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="q" placeholder="搜索文章..." value="{{ query|default('') }}">
+                <button type="submit">搜索</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 我的博客 · 使用 FastAPI + Markdown 构建</p>
+    </footer>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
