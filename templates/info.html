@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}网站介绍 - 我的博客{% endblock %}
+
+{% block content %}
+<div class="info-page">
+    <h1>{{ site_info.title }}</h1>
+
+    <div class="info-content">
+        <p class="info-description">{{ site_info.description }}</p>
+
+        <h2>主要功能</h2>
+        <ul class="feature-list">
+            {% for feature in site_info.features %}
+            <li>{{ feature }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>技术栈</h2>
+        <table class="tech-table">
+            <thead>
+                <tr>
+                    <th>类别</th>
+                    <th>技术</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category, tech in site_info.tech_stack %}
+                <tr>
+                    <td>{{ category }}</td>
+                    <td>{{ tech }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>路由说明</h2>
+        <ul class="route-list">
+            <li><code>/</code> — 首页，展示最新文章列表</li>
+            <li><code>/post/{slug}</code> — 文章详情页</li>
+            <li><code>/category/{name}</code> — 按分类筛选文章</li>
+            <li><code>/tag/{name}</code> — 按标签筛选文章</li>
+            <li><code>/search?q=关键词</code> — 搜索文章</li>
+            <li><code>/about</code> — 关于作者</li>
+            <li><code>/info</code> — 网站介绍（当前页面）</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

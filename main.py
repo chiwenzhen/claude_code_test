@@ -91,6 +91,32 @@ async def about(request: Request):
     return templates.TemplateResponse("about.html", ctx)
 
 
+# ── 网站介绍 ──────────────────────────────────────────
+
+@app.get("/info", response_class=HTMLResponse)
+async def info(request: Request):
+    ctx = _common_context(request)
+    ctx["site_info"] = {
+        "title": "我的个人博客",
+        "description": "一个使用 FastAPI + Markdown 构建的轻量级个人博客，专注于技术分享与生活记录。",
+        "features": [
+            "使用 FastAPI 构建，性能优异、异步支持完善",
+            "Markdown 撰写文章，专注内容本身",
+            "支持分类与标签，方便内容组织与检索",
+            "内置全文搜索功能",
+            "评论系统，与读者互动交流",
+            "响应式设计，适配各类设备",
+        ],
+        "tech_stack": [
+            ("后端框架", "FastAPI"),
+            ("模板引擎", "Jinja2"),
+            ("文章格式", "Markdown"),
+            ("前端", "原生 HTML / CSS / JavaScript"),
+        ],
+    }
+    return templates.TemplateResponse("info.html", ctx)
+
+
 # ── 评论 ──────────────────────────────────────────────
 
 @app.post("/comment/{slug}")

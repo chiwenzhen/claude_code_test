@@ -16,6 +16,7 @@
                 <a href="/category/{{ cat.name }}">{{ cat.name }}</a>
                 {% endfor %}
                 <a href="/about">关于</a>
+                <a href="/info">网站介绍</a>
             </div>
             <form action="/search" method="get" class="search-form">
                 <input type="text" name="q" placeholder="搜索文章..." value="{{ query|default('') }}">

@@ -526,6 +526,92 @@ a:hover {
     margin-bottom: 0.35rem;
 }
 
+/* ── Info Page ─────────────────────────────────── */
+.info-page h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.info-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.info-content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.feature-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.tech-table th,
+.tech-table td {
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    text-align: left;
+}
+
+.tech-table th {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.route-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.route-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.route-list li:last-child {
+    border-bottom: none;
+}
+
+.route-list code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
 /* ── Footer ────────────────────────────────────── */
 .site-footer {
     border-top: 1px solid var(--border);
